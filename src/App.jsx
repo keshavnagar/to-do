@@ -1,8 +1,10 @@
+import "./index.css"
+import ToDo from "./components/ToDo";
 const App = () => {
-  return(
+  return (
     <>
-    <h1>To do app</h1>
+      <ToDo />
     </>
-  )
-}
-export default App
+  );
+};
+export default App;

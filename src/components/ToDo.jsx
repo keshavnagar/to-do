@@ -19,9 +19,7 @@ const ToDo = () => {
       </header>
       <section>
         <form
-          onSubmit={(e) => {
-           handleTodos(e);
-          }}
+          onSubmit={handleTodos}
           className="flex font-medium"
         >
           <div>

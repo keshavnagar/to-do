@@ -1,4 +1,14 @@
+import { useState } from "react";
+
 const ToDo = () => {
+  const [todo, setTodo] = useState("");
+  console.log(todo);
+  const [todos, setTodos] = useState([]);
+  console.log(todos);
+  const todolistFunction = (e) => {
+    e.preveDefault();
+    setTodos((prev) => [...prev, todo]);
+  };
   return (
     <section className="bg-gradient-to-r from-emerald-500 to-emerald-900 w-screen h-screen flex flex-col items-center gap-[2rem]">
       <header className="mt-[10rem]">
@@ -6,7 +16,12 @@ const ToDo = () => {
         {/* <Date/> */}
       </header>
       <section>
-        <form className="flex font-medium">
+        <form
+          onSubmit={(e) => {
+            todolistFunction(e);
+          }}
+          className="flex font-medium"
+        >
           <div>
             {/* <input className="bg-gradient-to-r from-green-100 to-green-400 p-2 rounded-full placeholder-gray-600 focus:placeholder-green-500" placeholder="enter task" type="text" autoComplete="off" /> */}
             <input
@@ -14,10 +29,19 @@ const ToDo = () => {
               placeholder="enter task"
               type="text"
               autoComplete="off"
+              value={todo}
+              onChange={(e) => {
+                setTodo(e.target.value);
+              }}
             />
           </div>
           <div>
-            <button  className="text-2xl p-2 bg-gradient-to-r from-green-500 to-green-700 text-green-200" type="submit">Add Task</button>
+            <button
+              className="text-2xl p-2 bg-gradient-to-r from-green-500 to-green-700 text-green-200 bg-gradient-to-r hover:from-green-100 hover:to-green-300 hover:text-green-800"
+              type="submit"
+            >
+              Add Task
+            </button>
           </div>
         </form>
       </section>

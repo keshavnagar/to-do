@@ -5,10 +5,12 @@ const ToDo = () => {
   console.log(todo);
   const [todos, setTodos] = useState([]);
   console.log(todos);
-  const todolistFunction = (e) => {
-    e.preveDefault();
-    setTodos((prev) => [...prev, todo]);
-  };
+  const handleTodo = (e) => {
+      setTodo(e.target.value)
+  }
+  const handleTodos = (e) => {
+      e.preventDefault();
+  }
   return (
     <section className="bg-gradient-to-r from-emerald-500 to-emerald-900 w-screen h-screen flex flex-col items-center gap-[2rem]">
       <header className="mt-[10rem]">
@@ -18,7 +20,7 @@ const ToDo = () => {
       <section>
         <form
           onSubmit={(e) => {
-            todolistFunction(e);
+           handleTodos(e);
           }}
           className="flex font-medium"
         >
@@ -30,9 +32,7 @@ const ToDo = () => {
               type="text"
               autoComplete="off"
               value={todo}
-              onChange={(e) => {
-                setTodo(e.target.value);
-              }}
+              onChange={(e)=>{handleTodo(e)}}
             />
           </div>
           <div>

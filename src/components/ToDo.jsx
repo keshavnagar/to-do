@@ -10,6 +10,9 @@ const ToDo = () => {
   }
   const handleTodos = (e) => {
       e.preventDefault();
+      if(!todo) return;
+      setTodos((prev)=>[...prev, todo])
+      setTodo("")
   }
   return (
     <section className="bg-gradient-to-r from-emerald-500 to-emerald-900 w-screen h-screen flex flex-col items-center gap-[2rem]">

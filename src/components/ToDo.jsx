@@ -13,7 +13,7 @@ const ToDo = () => {
     if (!todo) return;
     if (todos.includes(todo)) {
       alert(`${todo} is already there`);
-      setTodo("");//for clear the value from the input , because the vaalue of input is state
+      setTodo(""); //for clear the value from the input , because the vaalue of input is state
       return;
     }
     setTodos((prev) => [...prev, todo]);
@@ -49,6 +49,11 @@ const ToDo = () => {
             </button>
           </div>
         </form>
+      </section>
+      <section className="flex flex-col gap-2">
+        {todos.map((item) => {
+          return <div className="bg-green-300">{item}</div>;
+        })}
       </section>
     </section>
   );

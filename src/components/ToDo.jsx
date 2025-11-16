@@ -27,6 +27,8 @@ const ToDo = () => {
     setDateTime(`${formattedDate}-${formattedTime}`);
   }, 1000);
 
+  console.log(`dekh ye `)
+
   return (
     <section className="bg-gradient-to-r from-emerald-500 to-emerald-900 w-screen h-screen flex flex-col items-center gap-[2rem]">
       <header className="mt-[10rem]">

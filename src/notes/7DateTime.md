@@ -20,3 +20,34 @@
 19. to chuki ye every second render ho raha hai to , ham isey clear interval kee help se handle kar sakte hai 
 20. sorry this is not a problme if we add any thing , like jo mene console kiya in setinteral to vo yadi iske bahar hoga to vo every second hame dikhega but setitenver ke andar hoga to vo hame nahi dikhega , ye bhi ham karke dekhte hai 
 21. but ek problme issey ye ho sakte hai ki memory leak ka probelm aa sakta hai 
+22. for securing memory leak we use useEffect the syntax is same as setinterval 
+23.  useEffect(()=>{},[]) this is our callback funciton inside them and same as setinterval, and [] this is array dependancy , if it is empty means it is only run one time , we use useeffect because of memory leak reductino and because of it provide the clean up funciotn that is also a funcitno that holds another thing with the help of arrow funciotn inside the return
+24. const interval =  setInterval(() => {
+      const now = new Date();
+      const formattedDate = now.toLocaleDateString();
+      const formattedTime = now.toLocaleTimeString();
+      setDateTime(`${formattedDate}-${formattedTime}`);
+      console.log(`dekh ye `);
+    }, 1000);
+    this whole thing i store in a single varibale, because in last i jsut called the cleanup funciotn 
+24. and the whole thiese thing i pasted into useeffect like this,
+useEffect(() => {
+    const interval =  setInterval(() => {
+      const now = new Date();
+      const formattedDate = now.toLocaleDateString();
+      const formattedTime = now.toLocaleTimeString();
+      setDateTime(`${formattedDate}-${formattedTime}`);
+      console.log(`dekh ye `);
+    }, 1000);
+    return 
+     return () => clearInterval(interval)
+}, []);
+
+ return () => clearInterval(interval) so it return or the use effect funciotn returns the clean up funciton that sure to every time is data is safe 
+ but one thing here we understan is 
+ it return a call back funciton like 
+
+ return () => {}
+ so it not return whole funciotn that we want but we need to write funciton insdie this cleanup funciotn 
+ aur ye jo clearinterval fucniton hai vo to js ka hee part hai vo to bas apan ne iski body me liha hai {} isliye nahi lagaye kyuki ye funciot ek hee line ka tha
+ 

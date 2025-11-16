@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { CiCircleCheck } from "react-icons/ci";
 import { CiCircleRemove } from "react-icons/ci";
 const ToDo = () => {
@@ -20,15 +20,16 @@ const ToDo = () => {
     setTodo("");
   };
 
-  setInterval(() => {
-    const now = new Date();
-    const formattedDate = now.toLocaleDateString();
-    const formattedTime = now.toLocaleTimeString();
-    setDateTime(`${formattedDate}-${formattedTime}`);
-    console.log(`dekh ye `)
-  }, 1000);
+  useEffect(() => {
+   const interval =  setInterval(() => {
+      const now = new Date();
+      const formattedDate = now.toLocaleDateString();
+      const formattedTime = now.toLocaleTimeString();
+      setDateTime(`${formattedDate}-${formattedTime}`);
+    }, 1000);
+    return () => clearInterval(interval)
+  }, []);
 
-  
 
   return (
     <section className="bg-gradient-to-r from-emerald-500 to-emerald-900 w-screen h-screen flex flex-col items-center gap-[2rem]">

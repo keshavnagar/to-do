@@ -20,12 +20,9 @@ const ToDo = () => {
     setTodo("");
   };
   const handleDelete = (item) => {
-    let index = todos.indexOf(item);
-    if (index > -1) {
-      todos.splice(index, 1);
-      setTodos(todos);
-     alert(`${item} deleted`)
-    }
+   const updateTodos = todos.filter((curr)=>curr!==item)
+   alert(`${item} deleted`)
+   setTodos(updateTodos)
   };
 
   useEffect(() => {

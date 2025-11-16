@@ -84,7 +84,7 @@ const ToDo = () => {
                   <CiCircleCheck className="text-2xl" />
                 </button>
                 <button>
-                  <CiCircleRemove  onClick={(key)=>handleDelete(key)} className="text-2xl" />
+                  <CiCircleRemove  onClick={()=>handleDelete(item)} className="text-2xl" />
                 </button>
               </div>
             </div>

@@ -20,25 +20,23 @@ const ToDo = () => {
     setTodo("");
   };
   const handleDelete = (item) => {
-      let index = todos.indexOf(item)
-      if(index>-1)
-      {
-        todos.splice(index,1)
-      }
-      setTodos(todos)
-      console.log(item)
-  }
+    let index = todos.indexOf(item);
+    if (index > -1) {
+      todos.splice(index, 1);
+      setTodos(todos);
+     alert(`${item} deleted`)
+    }
+  };
 
   useEffect(() => {
-   const interval =  setInterval(() => {
+    const interval = setInterval(() => {
       const now = new Date();
       const formattedDate = now.toLocaleDateString();
       const formattedTime = now.toLocaleTimeString();
       setDateTime(`${formattedDate}-${formattedTime}`);
     }, 1000);
-    return () => clearInterval(interval)
+    return () => clearInterval(interval);
   }, []);
-
 
   return (
     <section className="bg-gradient-to-r from-emerald-500 to-emerald-900 w-screen h-screen flex flex-col items-center gap-[2rem]">
@@ -84,7 +82,10 @@ const ToDo = () => {
                   <CiCircleCheck className="text-2xl" />
                 </button>
                 <button>
-                  <CiCircleRemove  onClick={()=>handleDelete(item)} className="text-2xl" />
+                  <CiCircleRemove
+                    onClick={() => handleDelete(item)}
+                    className="text-2xl"
+                  />
                 </button>
               </div>
             </div>

@@ -18,4 +18,5 @@
 17. but yaha par apne ko un dono varibal ka rup dikh raha hai aur `` ki help se apan ne string aur varibale dono ko dynamically bhi dekha hai to isme koi bhi ghabrane keee need nahi hai 
 18. but yaha par ek kami hai , kami ye hai ki , setinterval har second chal rahah hai aur uski valjah se state update ho rahahi hia aur state update ho rahai hai to vo har second render ho raha hai , tu ye check karnek ke liye console.log return ke upar kahi par bhi likh tujhe vo har seoncod lkhega hee likhega
 19. to chuki ye every second render ho raha hai to , ham isey clear interval kee help se handle kar sakte hai 
-20. 
+20. sorry this is not a problme if we add any thing , like jo mene console kiya in setinteral to vo yadi iske bahar hoga to vo every second hame dikhega but setitenver ke andar hoga to vo hame nahi dikhega , ye bhi ham karke dekhte hai 
+21. but ek problme issey ye ho sakte hai ki memory leak ka probelm aa sakta hai 

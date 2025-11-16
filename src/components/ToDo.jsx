@@ -25,9 +25,10 @@ const ToDo = () => {
     const formattedDate = now.toLocaleDateString();
     const formattedTime = now.toLocaleTimeString();
     setDateTime(`${formattedDate}-${formattedTime}`);
+    console.log(`dekh ye `)
   }, 1000);
 
-  console.log(`dekh ye `)
+  
 
   return (
     <section className="bg-gradient-to-r from-emerald-500 to-emerald-900 w-screen h-screen flex flex-col items-center gap-[2rem]">

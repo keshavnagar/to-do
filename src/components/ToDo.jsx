@@ -19,6 +19,15 @@ const ToDo = () => {
     setTodos((prev) => [...prev, todo]);
     setTodo("");
   };
+  const handleDelete = (item) => {
+      let index = todos.indexOf(item)
+      if(index>-1)
+      {
+        todos.splice(index,1)
+      }
+      setTodos(todos)
+      console.log(item)
+  }
 
   useEffect(() => {
    const interval =  setInterval(() => {
@@ -75,7 +84,7 @@ const ToDo = () => {
                   <CiCircleCheck className="text-2xl" />
                 </button>
                 <button>
-                  <CiCircleRemove className="text-2xl" />
+                  <CiCircleRemove  onClick={(key)=>handleDelete(key)} className="text-2xl" />
                 </button>
               </div>
             </div>

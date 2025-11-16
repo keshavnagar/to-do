@@ -11,3 +11,5 @@
 11. and deleted the element
 12. so here we use splice method, now we use the filter method 
 13. in filter method , the one thing i notice is , i also called a callback funciton in which i pass curr, and i write curr ! == item , in {} , but it deleted all , but the right thing is do not use {} if you have one line and if you , than write return inside that 
+14. now we add, clear all button
+15. 

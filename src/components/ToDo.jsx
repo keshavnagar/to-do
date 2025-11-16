@@ -24,6 +24,9 @@ const ToDo = () => {
    alert(`${item} deleted`)
    setTodos(updateTodos)
   };
+  const handleClearAll = (e) => {
+    setTodos([])
+  }
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -89,6 +92,9 @@ const ToDo = () => {
           );
         })}
       </section>
+      <button onClick={handleClearAll}>
+        clear all
+      </button>
     </section>
   );
 };

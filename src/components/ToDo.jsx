@@ -20,13 +20,11 @@ const ToDo = () => {
     setTodos((prev) => [...prev, todo]);
     setTodo("");
   };
-  const now = new Date();
-  const formattedDate = now.toLocaleDateString();
-  const [formattedTime, setFormattedTime] = useState(now.toLocaleTimeString());
 
   setInterval(() => {
-    formattedTime = now.toLocaleTimeString();
-    setFormattedTime(formattedTime);
+    const now = new Date();
+    const formattedDate = now.toLocaleDateString();
+    const formattedTime = now.toLocaleTimeString();
   }, 1000);
 
   return (

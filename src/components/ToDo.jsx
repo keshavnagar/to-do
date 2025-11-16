@@ -3,9 +3,7 @@ import { CiCircleCheck } from "react-icons/ci";
 import { CiCircleRemove } from "react-icons/ci";
 const ToDo = () => {
   const [todo, setTodo] = useState("");
-  console.log(todo);
   const [todos, setTodos] = useState([]);
-  console.log(todos);
   const handleTodo = (e) => {
     setTodo(e.target.value);
   };

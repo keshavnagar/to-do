@@ -6,3 +6,6 @@
 5. so now i watch the soluiton in video
 6. first i create set interval funciton 
 7. and copy all the variable that store the date and time 
+8. ReferenceError: formattedDate is not defined, this error is occured when i copy paste my three line of declaration of time and date code
+9. now we store date and time into one use state variable
+10. 

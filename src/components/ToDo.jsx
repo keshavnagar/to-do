@@ -20,13 +20,22 @@ const ToDo = () => {
     setTodos((prev) => [...prev, todo]);
     setTodo("");
   };
-  const date = new Date();
-  const formattedDate = date.toLocaleDateString();
+  const now = new Date();
+  const formattedDate = now.toLocaleDateString();
+  const [formattedTime, setFormattedTime] = useState(now.toLocaleTimeString());
+
+  setInterval(() => {
+    formattedTime = now.toLocaleTimeString();
+    setFormattedTime(formattedTime);
+  }, 1000);
+
   return (
     <section className="bg-gradient-to-r from-emerald-500 to-emerald-900 w-screen h-screen flex flex-col items-center gap-[2rem]">
       <header className="mt-[10rem]">
         <h1 className="text-3xl font-bold text-green-200">ToDo List</h1>
-        <h2>{formattedDate}-Time</h2>
+        <h2>
+          {formattedDate}-{formattedTime}
+        </h2>
       </header>
       <section>
         <form onSubmit={handleTodos} className="flex font-medium">

@@ -1,13 +1,12 @@
 import { useEffect, useState } from "react";
 import Form from "./Form";
 import ListContainer from "./ListContainer";
+import Header from "./Header";
+import ClearAllButton from "./ClearAllButton";
 const ToDo = () => {
   const [todo, setTodo] = useState("");
   const [todos, setTodos] = useState([]);
   const [dateTime, setDateTime] = useState("");
-  const handleClearAll = (e) => {
-    setTodos([]);
-  };
   useEffect(() => {
     const interval = setInterval(() => {
       const now = new Date();
@@ -19,13 +18,10 @@ const ToDo = () => {
   }, []);
   return (
     <section className="bg-gradient-to-r from-emerald-500 to-emerald-900 w-screen h-screen flex flex-col items-center gap-[2rem]">
-      <header className="mt-[10rem]">
-        <h1 className="text-3xl font-bold text-green-200">ToDo List</h1>
-        <h2>{dateTime}</h2>
-      </header>
+      <Header dateTime={dateTime} />
       <Form todos={todos} todo={todo} setTodo={setTodo} setTodos={setTodos} />
       <ListContainer todos={todos} setTodos={setTodos} />
-      <button onClick={handleClearAll}>clear all</button>
+      <ClearAllButton setTodos={setTodos} />
     </section>
   );
 };

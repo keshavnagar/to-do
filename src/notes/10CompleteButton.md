@@ -13,3 +13,5 @@
 # so we also empty the input box after click on add task 
 # also remove the key from list component
 # also remove the the error of state in which , where we add signle value , instead we add the object , like we add the object in a way of id, content and checked
+# now we handle the delete functionalities
+# we compare curr to the item here item is our direct content in todo object so we use the curr.content check with item and the functionalities are working

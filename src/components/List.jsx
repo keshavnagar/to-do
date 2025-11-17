@@ -3,7 +3,7 @@ import { CiCircleCheck } from "react-icons/ci";
 import { CiCircleRemove } from "react-icons/ci";
 const List = ({  todos, setTodos, item }) => {
   const handleDelete = (item) => {
-    const updateTodos = todos.filter((curr) => curr !== item);
+    const updateTodos = todos.filter((curr) => curr.content !== item);
     alert(`${item} deleted`);
     setTodos(updateTodos);
   };

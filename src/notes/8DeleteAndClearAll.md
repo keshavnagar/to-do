@@ -13,3 +13,4 @@
 13. in filter method , the one thing i notice is , i also called a callback funciton in which i pass curr, and i write curr ! == item , in {} , but it deleted all , but the right thing is do not use {} if you have one line and if you , than write return inside that 
 14. now we add, clear all button
 15. so we just add set todos and fit [] into it and it is done
+16. so in our every element we create sections , not by us but by youtuber , so this because they create them in a form of component , so they need to define classnames or css that is not define in simple fragment tag that's why they use sections , may be its for my prediciton thing.

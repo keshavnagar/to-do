@@ -14,3 +14,4 @@
 14. now we add, clear all button
 15. so we just add set todos and fit [] into it and it is done
 16. so in our every element we create sections , not by us but by youtuber , so this because they create them in a form of component , so they need to define classnames or css that is not define in simple fragment tag that's why they use sections , may be its for my prediciton thing.
+17. saparate both header and clear all button components

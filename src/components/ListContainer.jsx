@@ -4,7 +4,7 @@ const ListContainer = ({ todos, setTodos }) => {
     <section className="flex flex-col gap-2 flex-wrap">
       {todos.map((item) => {
         return (
-          <List item={item} key={item} todos={todos} setTodos={setTodos} />
+          <List item={item.content} key={item.id} todos={todos} setTodos={setTodos}  />
         );
       })}
     </section>

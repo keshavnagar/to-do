@@ -4,7 +4,7 @@ import ListContainer from "./ListContainer";
 import Header from "./Header";
 import ClearAllButton from "./ClearAllButton";
 const ToDo = () => {
-  const [todo, setTodo] = useState("");
+  const [todo, setTodo] = useState({});
   const [todos, setTodos] = useState([]);
   const [dateTime, setDateTime] = useState("");
  

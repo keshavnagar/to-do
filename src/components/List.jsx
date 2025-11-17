@@ -1,3 +1,4 @@
+import { useState } from "react";
 import { CiCircleCheck } from "react-icons/ci";
 import { CiCircleRemove } from "react-icons/ci";
 const List = ({  todos, setTodos, item, key }) => {
@@ -6,12 +7,13 @@ const List = ({  todos, setTodos, item, key }) => {
     alert(`${item} deleted`);
     setTodos(updateTodos);
   };
+ const [lineThrough, setLineThrough] = useState(false)
   return (
     <div key={key} className="bg-gradient-to-r from-green-500 to-green-700 text-white  flex justify-around items-center  h-[3rem] w-[15rem] text-2xl ">
-      <span className="mb-1"> {item}</span>
+      <span className={lineThrough? `line-through` : ``}> {item}</span>
       <div className="flex gap-4">
         <button>
-          <CiCircleCheck className="text-2xl" />
+          <CiCircleCheck className="text-2xl" onClick={()=>setLineThrough(!lineThrough)} />
         </button>
         <button>
           <CiCircleRemove

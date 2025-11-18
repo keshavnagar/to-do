@@ -20,3 +20,6 @@
 # so we do this with the help of map method in which we took all the updated todos in updatetodos array, and if curr.content is equal to item than we toggle that check property else we do not check and put into updatetodos array
 # and than we set into set todos set state funciton so it update the todos state , here the key thing is we do not need of todo becausae here we change the todos, with the help of map method and map method always return an array so we just update the set state method to put the array inside them
 # so here we really update the state but not todo but todos, with the help of map method and map method
+# Check Local Branches git branch
+# ✅ 1. Branches already merged into main git branch --merged main
+# ✅ 2. Branches NOT merged into main git branch --no-merged main

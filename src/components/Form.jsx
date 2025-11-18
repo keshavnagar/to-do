@@ -4,9 +4,12 @@ const Form = ({ todo, todos, setTodo, setTodos }) => {
   };
   const handleTodos = (e) => {
     e.preventDefault();
-    if (!todo.content) return;
+    if (!todo.content.trim()) {
+      alert("enter any task, than submit")
+      return;
+    }
     const exist = todos.some((curr) => {
-    return  curr.id === todo.id && curr.content === todo.content;
+      return curr.id === todo.id && curr.content === todo.content;
     });
     if (exist) {
       alert(`${todo.content} is already there`);
@@ -18,8 +21,11 @@ const Form = ({ todo, todos, setTodo, setTodos }) => {
     //   setTodo({}); //for clear the value from the input , because the vaalue of input is state
     //   return;
     // }
-    setTodos((prev) => [...prev, {id: todo.id, content: todo.content, checked: todo.checked}]);
-    setTodo({id: todo.id, content: "", checked: false});
+    setTodos((prev) => [
+      ...prev,
+      { id: todo.id, content: todo.content, checked: todo.checked },
+    ]);
+    setTodo({ id: todo.id, content: "", checked: false });
   };
   return (
     <section>

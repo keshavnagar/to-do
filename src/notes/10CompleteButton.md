@@ -15,3 +15,8 @@
 # also remove the the error of state in which , where we add signle value , instead we add the object , like we add the object in a way of id, content and checked
 # now we handle the delete functionalities
 # we compare curr to the item here item is our direct content in todo object so we use the curr.content check with item and the functionalities are working
+# now we add the check button in which we add line through to the text
+# so we also send the item.content in item props from listcontainer to list , same we also sent the checked property from listcontainer to list component
+# so we do this with the help of map method in which we took all the updated todos in updatetodos array, and if curr.content is equal to item than we toggle that check property else we do not check and put into updatetodos array
+# and than we set into set todos set state funciton so it update the todos state , here the key thing is we do not need of todo becausae here we change the todos, with the help of map method and map method always return an array so we just update the set state method to put the array inside them
+# so here we really update the state but not todo but todos, with the help of map method and map method

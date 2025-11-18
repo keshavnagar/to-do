@@ -12,7 +12,7 @@ const ToDo = () => {
     <section className="bg-gradient-to-r from-emerald-500 to-emerald-900 w-screen h-screen flex flex-col items-center gap-[2rem]">
       <Header dateTime={dateTime} setDateTime={setDateTime} />
       <Form todos={todos} todo={todo} setTodo={setTodo} setTodos={setTodos} />
-      <ListContainer todos={todos} setTodos={setTodos} />
+      <ListContainer todo={todo} todos={todos} setTodos={setTodos} setTodo={setTodo} />
       <ClearAllButton setTodos={setTodos} />
     </section>
   );

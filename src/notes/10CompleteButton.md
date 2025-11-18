@@ -23,3 +23,5 @@
 # Check Local Branches git branch
 # ✅ 1. Branches already merged into main git branch --merged main
 # ✅ 2. Branches NOT merged into main git branch --no-merged main
+# ki list contianer and list me todo ki need isliye nahi hai kyuki apne ko change todos me karne ahi like delete aur check to apan delete to todos state ko update karke bhi kar sakte hai aur check bhi isime update karke kar sakte hai to isliey todo pass karne ki koi need nahi hai 
+# 

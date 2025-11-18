@@ -13,7 +13,7 @@ const Form = ({ todo, todos, setTodo, setTodos }) => {
     });
     if (exist) {
       alert(`${todo.content} is already there`);
-      setTodo({}); //for clear the value from the input , because the vaalue of input is state
+       setTodo({ id: todo.id, content: "", checked: false }); //for clear the value from the input , because the vaalue of input is state
       return;
     }
     // if (todos.includes(todo.id)) {

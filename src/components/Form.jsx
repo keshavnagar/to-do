@@ -13,7 +13,7 @@ const Form = ({ todo, todos, setTodo, setTodos }) => {
     });
     if (exist) {
       alert(`${todo.content} is already there`);
-       setTodo({ id: todo.id, content: "", checked: false }); //for clear the value from the input , because the vaalue of input is state
+       setTodo((prev)=>({...prev, content: ""}));; //for clear the value from the input , because the vaalue of input is state
       return;
     }
     // if (todos.includes(todo.id)) {
@@ -25,7 +25,7 @@ const Form = ({ todo, todos, setTodo, setTodos }) => {
       ...prev,
       { id: todo.id, content: todo.content, checked: todo.checked },
     ]);
-    setTodo({ id: todo.id, content: "", checked: false });
+    setTodo((prev)=>({...prev, content: ""}));
   };
   return (
     <section>

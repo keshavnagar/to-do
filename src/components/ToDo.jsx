@@ -8,8 +8,15 @@ const ToDo = () => {
   const [todo, setTodo] = useState({});
   const [todos, setTodos] = useState(() => {
     const getTodosString = localStorage.getItem(todoLocalKey);
-    const getTodos = JSON.parse(getTodosString);
-    return getTodos;
+    if(!getTodosString)
+    {
+      return []
+    }
+    else
+    {
+      const getTodos = JSON.parse(getTodosString)
+      return getTodos
+    }
   });
   const [dateTime, setDateTime] = useState("");
 

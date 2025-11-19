@@ -3,21 +3,11 @@ import Form from "./Form";
 import ListContainer from "./ListContainer";
 import Header from "./Header";
 import ClearAllButton from "./ClearAllButton";
+import { getTodoLocal } from "./localStorage";
 const ToDo = () => {
-  const todoLocalKey = `todosLocal`;
+  
   const [todo, setTodo] = useState({});
-  const [todos, setTodos] = useState(() => {
-    const getTodosString = localStorage.getItem(todoLocalKey);
-    if(!getTodosString)
-    {
-      return []
-    }
-    else
-    {
-      const getTodos = JSON.parse(getTodosString)
-      return getTodos
-    }
-  });
+  const [todos, setTodos] = useState(() => getTodoLocal());
   const [dateTime, setDateTime] = useState("");
 
   return (
@@ -28,7 +18,6 @@ const ToDo = () => {
         todo={todo}
         setTodo={setTodo}
         setTodos={setTodos}
-        todoLocalKey={todoLocalKey}
       />
       <ListContainer
         todo={todo}

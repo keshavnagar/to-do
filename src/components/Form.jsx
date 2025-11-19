@@ -1,6 +1,6 @@
 import { useEffect } from "react";
-
-const Form = ({ todo, todos, setTodo, setTodos, todoLocalKey }) => {
+import { setTodoLocal } from "./localStorage";
+const Form = ({ todo, todos, setTodo, setTodos }) => {
   const handleTodo = (e) => {
     setTodo({ id: e.target.value, content: e.target.value, checked: false });
   };
@@ -31,7 +31,7 @@ const Form = ({ todo, todos, setTodo, setTodos, todoLocalKey }) => {
     setTodo((prev) => ({ ...prev, content: "" }));
   };
 
-  localStorage.setItem(todoLocalKey,JSON.stringify(todos))
+ setTodoLocal(todos)
   return (
     <section>
       <form onSubmit={handleTodos} className="flex font-medium">

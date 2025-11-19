@@ -1,3 +1,5 @@
+import { useEffect } from "react";
+
 const Form = ({ todo, todos, setTodo, setTodos }) => {
   const handleTodo = (e) => {
     setTodo({ id: e.target.value, content: e.target.value, checked: false });
@@ -5,7 +7,7 @@ const Form = ({ todo, todos, setTodo, setTodos }) => {
   const handleTodos = (e) => {
     e.preventDefault();
     if (!todo.content.trim()) {
-      alert("enter any task, than submit")
+      alert("enter any task, than submit");
       return;
     }
     const exist = todos.some((curr) => {
@@ -13,7 +15,7 @@ const Form = ({ todo, todos, setTodo, setTodos }) => {
     });
     if (exist) {
       alert(`${todo.content} is already there`);
-       setTodo((prev)=>({...prev, content: ""}));; //for clear the value from the input , because the vaalue of input is state
+      setTodo((prev) => ({ ...prev, content: "" })); //for clear the value from the input , because the vaalue of input is state
       return;
     }
     // if (todos.includes(todo.id)) {
@@ -25,8 +27,11 @@ const Form = ({ todo, todos, setTodo, setTodos }) => {
       ...prev,
       { id: todo.id, content: todo.content, checked: todo.checked },
     ]);
-    setTodo((prev)=>({...prev, content: ""}));
+
+    setTodo((prev) => ({ ...prev, content: "" }));
   };
+
+  localStorage.setItem('todoLocal',JSON.stringify(todos))
   return (
     <section>
       <form onSubmit={handleTodos} className="flex font-medium">

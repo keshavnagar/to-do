@@ -46,4 +46,5 @@
   });
   20. so apan kuch is prakar se pahle check karenge ki data undefine ya falsy to nahi hai , ab yaha par problem ye ari thi mujhe ki me falsy wali condition samajh nahi para tha 
   21. like if(getTodosstring) jab me likh raha tha to ye false thi aur isme jo likha tha vo chal nahi raha tha aru iske else wala chalr ra tha to me confused ho gaya , to ek bat yad rakhana hia ki , jab false hai aur check karna hia ki value falsy hai , null, undefine hai to apne ko bas usme check karne ke liye ! ye laga denge yadi ye true ho jayega to samajh jayenge ki han ye galat ahi jo is conditin ko true kar degin means ye falsey hai aur apan jo bhi likhna chahte hai vo chal jayega
-  
+  22. so jo error ari thi kotdwar se ane ke bad application ko kholne ke bad vo isliye ari thi kyuki jo localstorage the usme pahle se hee jo value thi vo undefined thi aur jo use state hai jisme apan ne logic lagaya hai ki refresh karne ke bad value empty array na hoke jo localstroage me save hai vo ani chahiye to vo localstrorage se hee undefine value ko fetch kar raha tha aur logic badlene ke baad bhi isliye error ari thi
+  23. so simple sa soliution ye hai ki jo usestate hai vo update hori thi, yahi karan ahi 

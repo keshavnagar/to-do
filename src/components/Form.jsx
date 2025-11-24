@@ -1,4 +1,3 @@
-import { useEffect } from "react";
 import { setTodoLocal } from "./localStorage";
 const Form = ({ todo, todos, setTodo, setTodos }) => {
   const handleTodo = (e) => {

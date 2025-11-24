@@ -1,15 +1,9 @@
-
-
-const todoLocalKey = `todosLocal`; 
+const todoLocalKey = `todosLocal`;
 
 export const getTodoLocal = () => {
   const getTodosString = localStorage.getItem(todoLocalKey);
-  if (!getTodosString) {
-    return [];
-  } else {
-    const getTodos = JSON.parse(getTodosString);
-    return getTodos;
-  }
+  if (!getTodosString) return [];
+  return JSON.parse(getTodosString);
 };
 
 export const setTodoLocal = (todos) => {

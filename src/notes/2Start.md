@@ -2,7 +2,7 @@
 1. some of the things we create in js but we also want to implement before use them in our project so we implement on this help.jsx file
 2. i again learn how to install tailwind in my project
     1. npm install tailwindcss @tailwindcss/vite 
-    2. import tailwindcss from '@tailwindcss/vite' add in below thing
+    2. import tailwindcss from '@tailwindcss/vite' in vite.config.js file
     import { defineConfig } from 'vite'
     import react from '@vitejs/plugin-react'
     import tailwindcss from '@tailwindcss/vite'
